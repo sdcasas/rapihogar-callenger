@@ -1,6 +1,7 @@
 from rest_framework import viewsets, serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
 from django.db.models import Value
 from django.db.models.functions import Concat
 
@@ -26,6 +27,7 @@ class PedidoSerializer(serializers.ModelSerializer):
 
 
 class PedidoViewSet(viewsets.ModelViewSet):
+    http_method_names = ['put', ]
     serializer_class = PedidoSerializer
     queryset = Pedido.objects.all()
 
