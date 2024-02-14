@@ -115,7 +115,7 @@ class Tecnico(models.Model):
         ordering = ('apellido', 'nombre')
     
     def __str__(self):
-        self.full_name
+        return self.full_name
 
 
 class Pedido(models.Model):
