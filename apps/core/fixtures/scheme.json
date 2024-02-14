@@ -1,13 +1,13 @@
 [
 {
-    "model": "rapihogar.scheme",
+    "model": "core.scheme",
     "pk": 1,
     "fields": {
         "name": "Asistencia"
     }
 },
 {
-    "model": "rapihogar.scheme",
+    "model": "core.scheme",
     "pk": 2,
     "fields": {
         "name": "Siniestro"

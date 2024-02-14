@@ -1,6 +1,6 @@
 [
 {
-    "model": "rapihogar.company",
+    "model": "core.company",
     "pk": 1,
     "fields": {
         "name": "aseguradora",

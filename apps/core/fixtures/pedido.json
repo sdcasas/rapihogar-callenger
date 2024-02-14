@@ -1,11 +1,12 @@
 [
 {
-    "model": "rapihogar.pedido",
+    "model": "core.pedido",
     "pk": 1,
     "fields": {
         "type_request": 1,
         "client": 2,
-        "scheme": 1
+        "scheme": 1,
+        "tecnico": 1
     }
 }
 ]

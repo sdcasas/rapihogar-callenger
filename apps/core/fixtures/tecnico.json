@@ -1,0 +1,10 @@
+[
+{
+    "model": "core.tecnico",
+    "pk": 1,
+    "fields": {
+        "apellido": "Simpson",
+        "nombre": "Homero"
+    }
+}
+]
