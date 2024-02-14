@@ -37,6 +37,8 @@ docker exec container_rapihogar_backend_app python manage.py loaddata apps/core/
 docker exec container_rapihogar_backend_app python manage.py loaddata apps/core/fixtures/scheme.json --app core.scheme
 docker exec container_rapihogar_backend_app python manage.py loaddata apps/core/fixtures/tecnico.json --app core.tecnico
 docker exec container_rapihogar_backend_app python manage.py loaddata apps/core/fixtures/pedido.json --app core.pedido
+docker exec container_rapihogar_backend_app python manage.py pedido_create --cantidad=10
+docker exec container_rapihogar_backend_app python manage.py tecnico_create --cantidad=10 
 ```
 
 ```bash
