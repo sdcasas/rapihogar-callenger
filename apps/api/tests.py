@@ -1,10 +1,10 @@
 import json
-from apps.rapihogar.models import User
 from django.urls import reverse
 
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase
-from apps.rapihogar.models import Company
+
+from core.models import Company, User
 
 
 class CompanyListCreateAPIViewTestCase(APITestCase):
