@@ -1,11 +1,17 @@
-from rest_framework import viewsets, serializers
+import json
+
+from rest_framework import viewsets, serializers, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
+
 
 from django.db.models import Value
 from django.db.models.functions import Concat
+from django.http import HttpResponse
 
 from core.models import Company, Tecnico, Pedido
+from core.services import TecnicoServices
 
 
 class CompanySerializer(serializers.ModelSerializer):
@@ -49,5 +55,16 @@ class TecnicoList(APIView):
                                     .filter(fullname_search__icontains=query))
         serializer = TecnicoSerializers(tecnico_query, many=True)
         return Response(serializer.data)
-    
 
+
+@api_view()
+@permission_classes([permissions.IsAuthenticated])
+def tecnico_informe(request):
+    service = TecnicoServices()
+    to_json = {
+        "avg": service.get_avg(),
+        "min": service.get_min(),
+        "max": service.get_max(),
+        "get_technicians_lt_avg": service.get_technicians_lt_avg(),
+    }
+    return HttpResponse(json.dumps(to_json), content_type='application/json')
